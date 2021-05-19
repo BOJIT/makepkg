@@ -1,0 +1,18 @@
+---
+
+name: makepkg
+description: Uses makepkg to build a package for Arch Linux
+inputs:
+  path:
+    description: "Path to directory containing source packages"
+    required: true
+    default: ""
+  dest:
+    description: "Path to directory containing destination packages"
+    required: false
+    default: ""
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - "${{ inputs.path }}"
