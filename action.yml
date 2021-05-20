@@ -6,13 +6,14 @@ inputs:
   src:
     description: "Path to directory containing source packages"
     required: true
-    default: ""
+    default: "."
   dest:
     description: "Path to directory containing destination packages"
     required: false
-    default: ""
+    default: "."
 runs:
   using: docker
   image: Dockerfile
   args:
-    - "${{ inputs.path }}"
+    - "${{ inputs.src }}"
+    - "${{ inputs.dest }}"

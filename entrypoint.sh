@@ -3,24 +3,24 @@
 echo $1
 echo $2
 
-if [[ ! -z "$1" ]]; then
-    cd "$1"
-fi
+# if [[ ! -z "$1" ]]; then
+#     cd "$1"
+# fi
 
 echo "Running makepkg from $PWD"
 
-pkg_deps=$(source ./PKGBUILD && echo ${makedepends[@]} ${depends[@]})
-echo "Installing dependencies: $pkg_deps"
-pacman -Syu --noconfirm $pkg_deps
+# pkg_deps=$(source ./PKGBUILD && echo ${makedepends[@]} ${depends[@]})
+# echo "Installing dependencies: $pkg_deps"
+# pacman -Syu --noconfirm $pkg_deps
 
-chown -R builder "$PWD"
+# chown -R builder "$PWD"
 
-echo "Running makepkg"
+# echo "Running makepkg"
 
-# TODO: support extra flags
+# # TODO: support extra flags
 
-su --login builder --command='makepkg -fs ./PKGBUILD'
+# su --login builder --command='makepkg -fs ./PKGBUILD'
 
-echo "Running namcap"
+# echo "Running namcap"
 
-namcap -i *.pkg.tar.xz
+# namcap -i *.pkg.tar.xz
