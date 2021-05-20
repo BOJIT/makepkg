@@ -1,4 +1,4 @@
-FROM archlinux/archlinux:latest
+FROM archlinux:latest
 
 RUN pacman -Syu --noconfirm base-devel namcap
 

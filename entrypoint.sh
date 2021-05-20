@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo $1
+echo $2
+
 if [[ ! -z "$1" ]]; then
     cd "$1"
 fi

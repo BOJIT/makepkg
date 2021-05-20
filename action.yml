@@ -3,7 +3,7 @@
 name: makepkg
 description: Uses makepkg to build a package for Arch Linux
 inputs:
-  path:
+  src:
     description: "Path to directory containing source packages"
     required: true
     default: ""
