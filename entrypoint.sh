@@ -1,13 +1,19 @@
 #!/bin/bash
 
-echo $1
-echo $2
+# Get build arguments:
+src=$1
+dest=$2
 
-# if [[ ! -z "$1" ]]; then
-#     cd "$1"
-# fi
+src='src'
+dest='dest'
+
+echo "Source Directory: $src"
+echo "Destination Directory: $dest"
 
 echo "Running makepkg from $PWD"
+
+ls -al $src
+ls -al $dest
 
 # pkg_deps=$(source ./PKGBUILD && echo ${makedepends[@]} ${depends[@]})
 # echo "Installing dependencies: $pkg_deps"
